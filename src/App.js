@@ -5,7 +5,7 @@ import {
   Route,
   Outlet
 } from 'react-router-dom'
-import AboutUs from './page/about-us.jsx'
+import Home from './page/Home/home.jsx'
 import Mission from './page/mission/mission';
 import Footer from './section/footer/footer';
 import Nav from './section/nav-bar/nav';
@@ -36,7 +36,7 @@ const router = Router([
     children:[
       {
         path: "/",
-        element: <AboutUs />,
+        element: <Home />,
       },
       {
         path: "/about",

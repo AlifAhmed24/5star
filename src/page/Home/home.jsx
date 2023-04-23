@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import "./about-us.css";
+import "./home.css";
 import aboutOne from "../../Assets/home/about1.png";
 import aboutTwo from "../../Assets/home/about2.png";
+import HomeSlider from '../../section/home-slider/home.jsx'
 import axios from "axios";
 
 function About() {
@@ -31,6 +32,8 @@ function About() {
   }
 
   return (
+    <>
+    <HomeSlider />
     <div className="aboutUs">
       <div className="homeWrapper">
         <div className="container">
@@ -126,6 +129,7 @@ function About() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

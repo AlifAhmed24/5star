@@ -10,7 +10,7 @@ function Footer() {
         <div className="footerWrapper">
           <div className="footer-details">
             <img src={logo} alt="fivestart" />
-            <h1>5 Start Liquiadators</h1>
+            <h1>5 Start Liquidations</h1>
             <p>
               Helping You Through Life’s Transitions <br /> and Funding the Next
               Chapter <br /> of Your Life.

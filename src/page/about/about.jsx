@@ -33,8 +33,8 @@ function About() {
                 <h1>About Us</h1>
                 <p>
                   You will find the staff at Five Star Estate Liquidations very
-                  professional and experienced…led by the owner, Ron Fields.
-                  With an extensive background in antiques and collectables, our
+                  professional and experienced…led by the owner, <b>Ron Fields. </b>
+                   With an extensive background in antiques and collectables, our
                   company knows how to market a wide range of estate items to
                   maximize the sales price. However, we don’t know everything,
                   and, in those cases, we have dozens of certified appraisers

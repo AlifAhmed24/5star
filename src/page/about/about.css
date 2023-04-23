@@ -19,11 +19,16 @@
     gap: 3rem;
 }
 .aboutImg{
-    height: 100%;
-    background-color: red;
+    height: 23rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    
 }
 .aboutImg > img{
     width: 100%;
+    object-fit: cover;
 }
 .aboutWrapper > .aboutinfo >  h1{
     font-weight: 500;
