@@ -1,0 +1,34 @@
+
+.cart{
+    background-color: #ffffff;
+    padding: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    /* animation-name: slideUp;
+    animation-duration: 1s;
+    transition: all 0.1s ease; */
+}
+/* @keyframes slideUp {
+    0%{margin-top: 2rem;}
+    100%{margin-top: 0rem;}
+} */
+.icon > span{
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: #696969;
+    background-color: #ebebeb;
+    padding: 1.5rem;
+    transition: all .2s ease;
+}
+.cart:hover > .icon > span{
+    color: #fff;
+    background-color: #94ABFF;
+}
+.cart > p{
+    color: #6D6D6D;
+    text-align: center;
+    font-size: 1.1rem;
+}

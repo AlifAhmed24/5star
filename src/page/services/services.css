@@ -1,0 +1,56 @@
+.services{
+    background-color: #ffffff;
+    
+}
+.services > svg{
+    margin-bottom: -1rem;
+}
+.servicesWrapper{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    
+}
+.contentSection > svg{
+    margin-bottom: -0.5rem;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.title > p{
+    color: #141414;
+    line-height: 1.7rem;
+    font-weight: 400;
+}
+.serviceContent .title> h1{
+    font-weight: 500;
+    border-bottom: 2px solid #9c9c9c;
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    color: #494949;
+    
+}
+.serviceContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.servicesContentSection {
+    background-color: #f3f3f3;
+    padding: 0rem 0rem 5rem 0rem;
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .servicesWrapper{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        
+    }
+  }

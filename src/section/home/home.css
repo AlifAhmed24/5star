@@ -1,0 +1,124 @@
+.home-section{
+    height: 80vh;
+    position: relative;
+}
+
+.home1, .home2, .home3, .home4{
+    position: absolute;
+}
+
+.home1{
+    width: 58%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.home2{
+    width: 20%;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+.home3{
+    width: 20%;
+    right: 30%;
+    z-index: -2;
+    
+}
+.home4{
+    height: 50%;
+    top: 50%;
+    transform: translate(0%,-50%);
+    z-index: -2;
+}
+
+
+/* home content=========================================== */
+.Home-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 20;
+}
+.Home-content h1{
+    color: #636377;
+    font-size: 2.5rem;
+    font-weight: 500;
+    
+}
+.Home-content .home-btn{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.Home-content .home-btn a{
+    padding: 0.8rem 3.5rem;
+    border-radius: 0.1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: all .1s ease;
+}
+.Home-content .home-btn a:first-child{
+    color: #636377;
+    border: 2px solid #636377;
+    
+}
+.Home-content .home-btn a:first-child:hover{
+    color: white;
+    background-color: #636377;
+}
+.Home-content .home-btn a:last-child{
+    color: white;
+    background-color: #636377;
+}
+.Home-content .home-btn a:last-child:hover{
+    background-color: #7c7c96;
+}
+
+
+
+
+
+/* ===============responsive======================== */
+@media only screen and (max-width: 1300px) {
+    .Home-content h1{
+        font-size: 2rem;
+        margin-top: 5rem;
+    }
+    .Home-content .home-btn a{
+        padding: 0.5rem 3rem;
+        font-size: 1.2rem;
+    }
+    .home-section{
+        height: 50vh;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .Home-content h1{
+        font-size: 1.3rem;
+        margin-top: 5rem;
+    }
+    .Home-content .home-btn a{
+        padding: 0.4rem 2.3rem;
+        font-size: 1rem;
+    }
+    .home-section{
+        height: 40vh;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .Home-content h1{
+        font-size: 1.1rem;
+        margin-top: 3rem;
+    }
+    .Home-content .home-btn a{
+        padding: 0.3rem 2.1rem;
+        font-size: 0.8rem;
+    }
+    .home-section{
+        height: 40vh;
+    }
+}

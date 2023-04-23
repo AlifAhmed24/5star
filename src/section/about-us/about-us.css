@@ -1,0 +1,98 @@
+.homeOne{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding: 4rem 0rem;
+}
+.homeOne > img{
+    width: 100%;
+}
+.homwOne > p{
+    line-height: 2rem;
+    width: 50%;
+    color: #505050;
+}
+.homeWrapper > svg {
+    margin-bottom: -0.5rem;
+}
+/* =======================home one====================== */
+.homeOne > p{
+    
+    color: #505050;
+    line-height: 2rem;
+}
+.homeOne{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+/* =======================home two====================== */
+
+.homeTwo{
+    display: flex;
+    align-items: center;
+    background-color: #94abff;
+    padding: 1rem  0rem 3rem 0rem;
+}
+
+.homeTwoWrapper{
+   display: grid;
+   gap: 2rem;
+    grid-template-columns: 60% 40%;
+}
+.homeTwoWrapper > img{
+    width: 100%;
+}
+.homeTwoWrapper > p{
+    line-height: 2rem;
+    color: #353535;
+}
+@media only screen and (max-width: 1120px) {
+    .homeTwoWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+    }
+    .homeOne {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+    }
+}
+
+/* ==================newsletter======================= */
+.newsletter{
+    padding: 5rem 0rem;
+    
+}
+.newsletterWrapper {
+    width: 30rem;
+    margin: auto;
+}
+.newsletterWrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.newsletterWrapper form input, button{
+    padding: 0.8rem;
+    border-radius: 0.1rem;
+    border: 1px solid #dedede;
+    outline: none;
+}
+
+.newsletterWrapper form button{
+    background-color: #000;
+    color: white;
+    border: 0;
+    padding: 0.9rem;
+}
+.newsletterWrapper form button:hover{
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+.newsletterWrapper h3{
+    font-weight: 500;
+    font-size: 2.2rem;
+    color: #3c3c3c;
+    margin-bottom: 2rem;
+}

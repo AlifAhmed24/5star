@@ -1,0 +1,151 @@
+.contact{
+    padding: 8rem 0rem 5rem 0rem;
+}
+
+.title{
+    margin: 2rem 0 4rem 0;
+}
+
+.title > h1{
+    font-weight: 500;
+    color: #444444;
+    /* border-bottom: 2px solid #7e7d7d; */
+    width: fit-content;
+    text-align: center;
+}
+.contactWrapper{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+}
+.contact form input, textarea{
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.contact form input::placeholder{
+    color: #636363;
+    font-size: 0.9rem;
+}
+.nameField{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.nameField input, .location input{
+    width: 100%;
+}
+.location{
+    display: flex;
+    gap: 0.8rem;
+}
+.rules{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+.rulesOne{
+    display: flex;
+    align-items: start;
+    gap: 0.8rem;
+    /* width: 70%; */
+}
+.rulesOne input{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.rulesOne p, .rulesTwo p{
+    color: #616161;
+    font-size: 0.8rem;
+}
+.rulesTwo{
+    display: flex;
+    align-items: start;
+    gap: 0.8rem;
+    /* width: 70%; */
+}
+.rulesTwo input{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+}
+form textarea{
+    height: 10rem;
+    resize: none;
+}
+form button{
+    padding: 0.7rem;
+    outline: none;
+    border: 0;
+    background-color: #0c0d1b;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: #2b2c3a;
+}
+.contactInfo{
+    background-color: #99aefc;
+    padding: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 0.3rem;
+    
+}
+.contactContact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contactInfo h1{
+    font-weight: 500;
+    color: white;
+    font-size: 1.6rem;
+}
+.contactContact h3{
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0rem;
+    border-bottom: 2px solid #dbdbdb;
+}
+.contactContact span{
+    color: #fff;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .nameField{
+        flex-direction: column;
+    }
+    .location{
+        flex-direction: column;
+    }
+    .contactInfo{
+        padding: 1.8rem;
+    }
+    .contactWrapper{
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+    
+  }
+

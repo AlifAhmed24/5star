@@ -1,0 +1,40 @@
+.serviceCart{
+    background-color:#fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #f3f3f3;
+}
+.servicesIcon{
+    background-color: #f3f3f3;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .1s ease;
+    overflow: hidden;
+}
+.serviceCart:hover .servicesIcon{
+    background-color: #94ABFF;
+}
+.servicesIcon > span{
+    font-size: 2.5rem;
+    color: #94ABFF;
+    transition: all .1s ease;
+}
+.serviceCart:hover .servicesIcon > span{
+    color: #f3f3f3;
+}
+.serviceCart > h2{
+    font-weight: 600;
+    color: #363636;
+}
+.serviceCart > p{
+    color: #818181;
+    line-height: 1.8rem;
+    font-size: 0.9rem;
+}

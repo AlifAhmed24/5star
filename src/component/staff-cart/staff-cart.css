@@ -1,0 +1,38 @@
+.StaffCart{
+    background-color: #99aefc;
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+.StaffCart > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.StaffCart > .icon > span{
+    color: #f7f7f7;
+    background-color: #b7c6fd;
+    font-size: 4rem;
+    padding: 1rem;
+    transition: all .2s ease;
+}
+.StaffCart:hover > .icon > span{
+    background-color: #fff;
+    color: #b7c6fd;
+}
+.StaffCart > h1{
+    font-weight: 500;
+    color: #f7f7f7;
+    text-transform: uppercase;
+}
+
+.StaffCart > p{
+    text-transform: uppercase;
+    color: #ebebeb;
+    
+    line-height: 1.7rem;
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+.whyUsCart{
+    background-color: #99aefc;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 0.3rem;
+}
+
+.whyUsCart > h1{
+    padding: 0.8rem 3rem;
+    font-weight: 500;
+    color: rgb(245, 245, 245);
+    border-bottom: 2px solid rgb(209, 209, 209);
+}
+.whyUsCart > p{
+    color: rgb(243, 243, 243);
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.8rem;
+}

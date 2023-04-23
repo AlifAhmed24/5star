@@ -1,0 +1,73 @@
+.faq{
+    padding: 10rem 0rem 3rem 0rem;
+}
+.faq > .container > h1{
+    border-bottom: 2px solid rgb(144, 143, 143);
+    padding: 0.3rem 3rem;
+    width: fit-content;
+    color: #5e5e5e;
+    display: flex;
+    margin: auto;
+}
+.faqWrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 0.5rem 1.5rem;
+    padding: 4rem 0rem 3rem 0rem;
+}
+.faqTitle{
+    display: flex;
+    align-items: center;
+    padding: 1rem 0rem;
+    cursor: pointer;
+    transition: all .2s ease;word-wrap: break-word;
+    max-width: 90%;
+}
+.faqTitle:hover{
+    background-color: rgb(233, 233, 233);
+}
+.faqTitle{
+    
+    
+}
+.faqTitle > span{
+    font-size: 1.8rem;
+    color: #303030;
+}
+.faqTitle > h3{
+    font-weight: 400;
+    color: #606060;
+    transition: 3s;
+}
+.material-symbols-outlined{
+    transition: 0.3s;
+}
+.faqContent > p{
+    display: none;
+    color: #5b5b5b;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    padding: 0rem 3rem;
+    animation-name: fadeIn;
+    animation-duration: 0.1s;
+}
+.faqContent {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* responsive======================== */
+@media only screen and (max-width: 1330px) {
+
+}

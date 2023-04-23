@@ -1,0 +1,95 @@
+footer {
+  background-color: #231f20;
+  color: white;
+ 
+}
+
+.footerWrapper {
+  padding: 3rem 0rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+/* =====================footer Details==================== */
+.footer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-details > img {
+  width: 3rem;
+}
+.footer-details > h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.footer-details > p {
+  font-weight: 300;
+  color: rgb(226, 226, 226);
+}
+
+/* ==================navigate-link============================ */
+.footer-navigate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.navigate-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: rgb(236, 236, 236);
+}
+
+.footer-navigate > h3 {
+  color: rgb(245, 245, 245);
+  font-weight: 500;
+  padding: 0.3rem 1rem 0.3rem 0rem;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  width: fit-content;
+}
+.navigate-link > a {
+  color: rgb(226, 226, 226);
+  font-weight: 300;
+  transform: all 0.2s ease;
+}
+.navigate-link > a:hover {
+  color: rgb(247, 247, 247);
+  font-weight: 300;
+}
+/* =========================footer-contact================== */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact > h3 {
+  color: rgb(245, 245, 245);
+  font-weight: 500;
+  padding: 0.3rem 0.5rem 0.3rem 0rem;
+  width: 10rem;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  /* background-color: red; */
+}
+.footer-contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.footer-contact-wrapper > div {
+  display: flex;
+  gap: 1rem;
+}
+.footer-contact-wrapper > div > p,
+a {
+  color: rgb(226, 226, 226);
+  font-weight: 300;
+  transform: all 0.2s ease;
+}
+.footer-contact-wrapper > div > p,
+a:hover {
+  color: rgb(247, 247, 247);
+  font-weight: 300;
+}

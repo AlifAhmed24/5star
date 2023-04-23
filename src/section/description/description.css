@@ -1,0 +1,14 @@
+.description{
+    padding: 3rem 0rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.description > img{
+    height: 32rem;
+    width: auto;
+}
+.description > p{
+    line-height: 30px;
+    color: #7A7A7C;
+}

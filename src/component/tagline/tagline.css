@@ -1,0 +1,23 @@
+
+.tagline > h2{
+    font-weight: 500;
+    font-size: 2rem;
+    color: #636377;
+    padding: 10rem 0rem 0rem 0rem;
+}
+@media only screen and (max-width: 990px) {
+    .tagline > h2{
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #636377;
+        padding: 8rem 0rem 2rem 0rem;
+    }    
+  
+  }
+@media only screen and (max-width: 530px) {
+    .tagline > h2{
+        font-size: 1.2rem;
+        padding: 8rem 0rem 2rem 0rem;
+    }    
+  
+  }

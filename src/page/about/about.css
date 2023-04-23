@@ -1,0 +1,42 @@
+.about{
+    background-color: #f7f7f7;
+}
+.about > svg{
+    margin-bottom: -1rem;
+}
+
+.aboutSection > svg{
+    margin-bottom: -0.5rem;
+}
+
+.aboutSection {
+    background-color: #fdfdfd;
+    padding: 2rem 0rem 5rem 0rem;
+    
+}
+.aboutWrapper {
+    display: flex;
+    gap: 3rem;
+}
+.aboutImg{
+    height: 100%;
+    background-color: red;
+}
+.aboutImg > img{
+    width: 100%;
+}
+.aboutWrapper > .aboutinfo >  h1{
+    font-weight: 500;
+    padding: 1rem 0rem;
+}
+.aboutWrapper > .aboutinfo > p{
+    color: #575757;
+    line-height: 2.2rem;
+    width: 70%;
+}
+
+@media only screen and (max-width: 1300px) {
+    .aboutWrapper > p{
+        width: 100%;
+    }
+}
