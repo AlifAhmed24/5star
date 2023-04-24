@@ -24,10 +24,10 @@
 
 .missionContent .title > h1{
     font-weight: 500;
-    border-bottom: 2px solid #f8f8f8;
+    border-bottom: 2px solid #494949;
     width: fit-content;
     padding: 0.5rem 2rem;
-    color: #f8f8f8;
+    color: #494949;
     
 }
 .missionContent{
@@ -36,7 +36,7 @@
     gap: 1rem;
 }
 .missionSection {
-    background-color: #94ABFF;
+    background-color: #f9f9ca;
     padding: 0rem 0rem 5rem 0rem;
     
 }
