@@ -1,73 +1,62 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const nodemailer = require("nodemailer");
-const cors = require('cors');
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import cors from "cors";
+import mongoose from 'mongoose'
+import newsletterRoute from './routes/newsletter.js';
+import loginRoute from './routes/auth.js'
+import contactRoute from './routes/contact.js'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'build'))); 
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'build'))); 
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
+// })
 
-app.post("/send-email", (req, res) => {
-  const {
-    fName,
-    lName,
-    email,
-    phone,
-    address,
-    city,
-    state,
-    zip,
-    checkboxOne,
-    checkboxTwo,
-    message,
-  } = req.body;
-
-  if (!fName || !email || !city) {
-    return res.status(400).send("Missing required fields");
-  }
-
-  const mailOptions = {
-    from: email,
-    to: "jhgangs.entertainment@gmail.com",
-    subject: "New form submission",
-    text: `Name: ${
-      fName + " " + lName
-    }\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nCity: ${city}\nState ${state}\nZip Code: ${zip}\nTerms1: ${checkboxOne}\nTerms2: ${checkboxTwo}\nMessage: ${message}`,
-  };
-  console.log(process.env.USER);
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "alifahmeddeveloper@gmail.com",
-      pass: "fumdyxrickfuacvq",
-    },
-  });
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      return res.status(500).send("Error sending email");
-    } else {
-      console.log(info.response);
-      return res.status(200).send("Email sent successfully");
+//mongoose connection
+const connection = async () => {
+    try{
+        await mongoose.connect('mongodb+srv://AlifAhmed:mmSZpAOFwO1V9wdh@cluster0.jfw2gub.mongodb.net/5star?retryWrites=true&w=majority');
+        console.log('Connected to mongoDB Database')
+    } catch(err){
+        throw err
     }
+}
+
+    mongoose.connection.on("disconnected", () => {
+    console.log("mongoDB disconnected!");
+  })
+
+
+//middleware
+app.use(express.json());
+app.use('/api/auth', loginRoute)
+app.use('/api/contact', contactRoute)
+app.use('/api/newsletter', newsletterRoute)
+
+//ERROR HANDLER
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong!";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack,
   });
 });
 
-app.post('/newsletter', (req, res) => {
-  console.log(req.body)
-})
-
 const PORT = 8800;
 app.listen(PORT, () => {
+  connection();
   console.log('server running on port ' + PORT)
 })
