@@ -28,7 +28,7 @@ function Contact() {
       
         setLoading(true);
         const res = await axios.post(
-          "http://5starestateliquidations.com/send-email",
+          "http://localhost:8800/api/contact/",
           formData
         );
 
@@ -100,7 +100,7 @@ function Contact() {
               />
             </div>
             <input
-              type="text"
+              type="email"
               placeholder="Email"
               name="email"
               onChange={handleChange}
@@ -161,7 +161,7 @@ function Contact() {
                   type="checkbox"
                   name="checkboxOne"
                   onChange={handleChange}
-                  value="checked Terms One"
+                  value="checked"
                 />
                 <p>
                   By providing your mobile number and email address, you agree
@@ -174,7 +174,7 @@ function Contact() {
                   type="checkbox"
                   name="checkboxTwo"
                   onChange={handleChange}
-                  value="checked Terms Two"
+                  value="checked"
                 />
                 <p>
                   Your data is safe and secure. We agree to keep all

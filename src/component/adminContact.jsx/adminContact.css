@@ -1,0 +1,52 @@
+.adminContact{
+    flex-grow: 1;
+    padding: 3rem 5rem;
+}
+.adminContactHeading{
+    display: flex;
+    justify-content: space-between;
+}
+.adminContactHeading > span{
+    font-size: 1.3rem;
+}
+
+/* table */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+    margin-top: 2rem;
+}
+th{
+    font-weight: 500;
+}
+th, td{
+    text-align: left;
+    font-size: 1.2rem;
+    border: 0;
+    padding: 1rem;
+}
+table tr:nth-child(even){
+    background-color: rgb(240, 240, 240);
+}
+.icon{
+    fill: #767575;
+}
+.icon:hover{
+    fill: #4f4f4f;
+    cursor: pointer;
+    transition: all ease .15s;
+}
+.icon:last-child{
+    fill: rgb(253, 92, 92);
+    cursor: pointer;
+    transition: all ease .15s;
+}
+.icon:last-child:hover{
+    fill: rgb(253, 61, 61);
+}
+.iconsList{
+    display: flex;
+    gap: 1rem;
+    box-sizing: border-box;
+}

@@ -1,0 +1,36 @@
+.dashboardSidebar{
+    background-color: #0d1030;
+    height: 100vh;
+    flex-grow: ;
+    width: 20rem;
+    color: white;
+    font-weight: 300;
+}
+.dashboardSidebar > h3{
+    font-weight: 400;
+    color: #c7c6c6;
+    border-bottom: 1px solid #656565;
+    padding: 1rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+.dashboardSidebar > div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    color: #dddddd;
+    transition: all ease .05s;
+}
+.dashboardSidebar > .list1{
+    margin-top: 1rem;
+}
+.dashboardSidebar > div:hover{
+    background-color: #20244e;
+    cursor: pointer;
+}
+.dashboardSidebar > div > span:last-child{
+    font-size: 1.1rem;
+    
+}

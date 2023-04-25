@@ -21,13 +21,14 @@ function About() {
   async function handleSubmit(ev){
       ev.preventDefault();
       try{
-        const res = await axios.post('http://localhost:8800/newsletter', newsletterInfo)
+        const res = await axios.post('http://localhost:8800/api/newsletter', newsletterInfo)
+        setNewsletterInfo({
+          name: "",
+          email: "",
+        });
       }catch(err){}
 
-      setNewsletterInfo({
-        name: "",
-        email: "",
-      });
+      
 
   }
 
@@ -115,12 +116,14 @@ function About() {
                   name="name"
                   placeholder="Your Name"
                   onChange={handleChange}
+                  value={newsletterInfo.name}
                 />
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   placeholder="Your Email Address"
                   onChange={handleChange}
+                  value={newsletterInfo.email}
                 />
                 <button>SUBSCRIBE</button>
               </form>

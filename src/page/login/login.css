@@ -1,0 +1,26 @@
+.login > form{
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login > form > input{
+    border: 1px solid #717070;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+}
+
+.login > form :first-child{
+    margin-bottom: 1rem;
+}
+
+.login > form > p{
+    color: red;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
