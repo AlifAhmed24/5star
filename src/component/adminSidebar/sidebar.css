@@ -1,5 +1,5 @@
 .dashboardSidebar{
-    background-color: #0d1030;
+    background-color: #292a30;
     height: 100vh;
     flex-grow: ;
     width: 20rem;
@@ -27,7 +27,7 @@
     margin-top: 1rem;
 }
 .dashboardSidebar > div:hover{
-    background-color: #20244e;
+    background-color: #33343f;
     cursor: pointer;
 }
 .dashboardSidebar > div > span:last-child{
