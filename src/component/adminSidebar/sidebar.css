@@ -2,7 +2,7 @@
     background-color: #292a30;
     height: 100vh;
     flex-grow: ;
-    width: 20rem;
+    min-width: 20rem;
     color: white;
     font-weight: 300;
 }
@@ -15,7 +15,7 @@
     align-self: center;
     justify-content: center;
 }
-.dashboardSidebar > div{
+.dashboardSidebar > a{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -26,11 +26,11 @@
 .dashboardSidebar > .list1{
     margin-top: 1rem;
 }
-.dashboardSidebar > div:hover{
+.dashboardSidebar > a:hover{
     background-color: #33343f;
     cursor: pointer;
 }
-.dashboardSidebar > div > span:last-child{
+.dashboardSidebar > a > span:last-child{
     font-size: 1.1rem;
     
 }

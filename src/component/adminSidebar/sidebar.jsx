@@ -1,24 +1,31 @@
-import React from 'react'
-import './sidebar.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./sidebar.css";
 
-function Sidebar() {
+function Sidebar({ path }) {
+  console.log(path);
   return (
-    <div className='dashboardSidebar'>
+    <div className="dashboardSidebar">
       <h3>Admin</h3>
-      <div className='list list1'>
-        <span class="material-symbols-outlined">
-          contact_mail
-        </span>
+      <Link
+        to="/admin/contact"
+        className="list list1"
+        style={{
+          backgroundColor:
+            path === "contact" || path === "preview"
+              ? "#33343f"
+              : "transparent",
+        }}
+      >
+        <span class="material-symbols-outlined">contact_mail</span>
         <span>Contact Informations</span>
-      </div>
-      <div className='list'>
-        <span class="material-symbols-outlined">
-          feed
-        </span>
+      </Link>
+      <Link className="list">
+        <span class="material-symbols-outlined">feed</span>
         <span>Newsletter Informations</span>
-      </div>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
