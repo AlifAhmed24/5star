@@ -20,7 +20,6 @@ import About from './page/about/about';
 import Faq from './page/faq/faq.jsx';
 import Login from './page/login/login.jsx'
 import Dashboard from './page/dashboard/dashboard';
-import ContactPreview from './page/contactPreview/contactPreview';
 function Layout(){
   return (
       <>
@@ -89,10 +88,6 @@ const router = Router([
   {
     path:"/admin",
     element: <Dashboard />
-  },
-  {
-    path:"/admin/contact/:id",
-    element: <ContactPreview />
   }
 ]);
 

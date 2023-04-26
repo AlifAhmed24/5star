@@ -1,0 +1,10 @@
+.previewRowTable{
+    border-spacing: 20px;
+}
+
+.previewRowTable > tr > td{
+    padding: 1rem 2rem;
+}
+.previewRowTable > tr:last-child > td:last-child{
+     line-height: 1.8rem;
+}

@@ -2,7 +2,7 @@
     background-color: #0d1030;
     height: 100vh;
     flex-grow: ;
-    width: 20rem;
+    min-width: 20rem;
     color: white;
     font-weight: 300;
 }

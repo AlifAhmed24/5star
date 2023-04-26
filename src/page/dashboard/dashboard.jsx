@@ -2,6 +2,8 @@ import React from 'react'
 import './dashboard.css'
 import Sidebar from '../../component/adminSidebar/sidebar'
 import AdminContact from '../../component/adminContact.jsx/adminContact'
+import ContactPreview from '../../component/contactPreview/contactPreview.jsx'
+
 
 function Dashboard() {
   return (
@@ -10,6 +12,7 @@ function Dashboard() {
         <div className='dashboardBody'>
         <Sidebar />
         <AdminContact />
+        {/* <ContactPreview /> */}
         </div>
     </div>
   )
