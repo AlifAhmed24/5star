@@ -38,3 +38,7 @@ body{
     
   }
 }
+
+.dashboardBody{
+  display: flex;
+}

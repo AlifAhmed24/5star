@@ -1,13 +1,12 @@
 .previewRowTable{
     border-spacing: 20px;
     
-    
 }
 
 .previewRowTable > tr > td{
     padding: 1rem 2rem;
     font-size: 1rem;
-     display: inline-block;
+    display: inline-block;
 }
 .previewRowTable > tr:last-child > td:last-child{
      line-height: 1.8rem;

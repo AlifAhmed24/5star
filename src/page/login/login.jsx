@@ -20,6 +20,7 @@ function Login() {
     return (
         <div className='login'>
             <form>
+                <h2>Admin</h2>
                 <input onChange={handleChange} type="text" name="username" placeholder="Username" required />
                 <input onChange={handleChange} type="password" name="password" placeholder="Password" required />
                 <p>Error messeage</p>

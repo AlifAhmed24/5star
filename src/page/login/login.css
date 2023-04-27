@@ -18,9 +18,18 @@
 .login > form :first-child{
     margin-bottom: 1rem;
 }
+.login > form :nth-child(2){
+    margin-bottom: 1rem;
+}
 
 .login > form > p{
     color: red;
     font-weight: 400;
     margin-top: 0.5rem;
+}
+
+.login > form > h2{
+    font-weight: 400;
+    text-align: center;
+    color: #474747;
 }
