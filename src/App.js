@@ -23,6 +23,7 @@ import AdminTop from "./component/adminTop/adminTop";
 import Sidebar from "./component/adminSidebar/sidebar";
 import AdminContact from "./component/adminContact.jsx/adminContact";
 import ContactPreview from "./component/contactPreview/contactPreview";
+import Newsletter from "./component/newsletter/newsletter";
 function Layout() {
   return (
     <>
@@ -115,6 +116,10 @@ const router = Router([
       {
         path: "/admin/contact/:id",
         element: <ContactPreview />,
+      },
+      {
+        path: "/admin/newsletter",
+        element: <Newsletter />,
       },
     ],
   },

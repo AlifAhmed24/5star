@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./sidebar.css";
 
-function Sidebar({ path }) {
+function Sidebar() {
+  const path = useLocation().pathname.split("/")[2];
   console.log(path);
   return (
     <div className="dashboardSidebar">
@@ -11,16 +12,19 @@ function Sidebar({ path }) {
         to="/admin/contact"
         className="list list1"
         style={{
-          backgroundColor:
-            path === "contact" || path === "preview"
-              ? "#33343f"
-              : "transparent",
+          backgroundColor: path === "contact" ? "#33343f" : "transparent",
         }}
       >
         <span class="material-symbols-outlined">contact_mail</span>
         <span>Contact Informations</span>
       </Link>
-      <Link className="list">
+      <Link
+        to="/admin/newsletter"
+        className="list"
+        style={{
+          backgroundColor: path === "newsletter" ? "#33343f" : "transparent",
+        }}
+      >
         <span class="material-symbols-outlined">feed</span>
         <span>Newsletter Informations</span>
       </Link>

@@ -1,0 +1,8 @@
+.adminNewsletter{
+    padding: 3rem 5rem;
+    flex-grow: 1;
+}
+.adminNewsletter > .newsletterTop > span{
+    font-size: 1.2rem;
+    color: #3c3c3c;
+}
