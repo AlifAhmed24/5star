@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import {
   createBrowserRouter as Router,
@@ -24,6 +25,8 @@ import Sidebar from "./component/adminSidebar/sidebar";
 import AdminContact from "./component/adminContact.jsx/adminContact";
 import ContactPreview from "./component/contactPreview/contactPreview";
 import Newsletter from "./component/newsletter/newsletter";
+import ProtectedRoute from "./utils/protectedRoute";
+import {userContext} from './utils/authContext.jsx'
 function Layout() {
   return (
     <>
@@ -103,7 +106,7 @@ const router = Router([
   },
   {
     path: "/",
-    element: <AdminLayout />,
+    element:<ProtectedRoute> <AdminLayout /></ProtectedRoute>,
     children: [
       {
         path: "/admin",
@@ -125,12 +128,17 @@ const router = Router([
   },
 ]);
 
-function App() {
+function App(){
+  const [isLoggedIn, setLoggedIn] = useState({
+      user: null,
+      authenticaed: false
+  })
+
   return (
-    <div className="app">
-      <RouterProvider router={router} />
-    </div>
-  );
+      <userContext.Provider value={[isLoggedIn, setLoggedIn]} className="main">
+          <RouterProvider router={router}/>
+      </userContext.Provider>
+  )
 }
 
 export default App;
