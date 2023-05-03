@@ -4,9 +4,11 @@ import path from 'path';
 import cors from "cors";
 import mongoose from 'mongoose'
 import newsletterRoute from './routes/newsletter.js';
-import loginRoute from './routes/auth.js'
+import authRoute from './routes/auth.js'
 import contactRoute from './routes/contact.js'
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,17 +17,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'build'))); 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'build'))); 
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 //mongoose connection
 const connection = async () => {
     try{
-        await mongoose.connect('mongodb+srv://AlifAhmed:mmSZpAOFwO1V9wdh@cluster0.jfw2gub.mongodb.net/5star?retryWrites=true&w=majority');
+        await mongoose.connect(process.env.DB_URL);
         console.log('Connected to mongoDB Database')
     } catch(err){
         throw err
@@ -39,7 +41,7 @@ const connection = async () => {
 
 //middleware
 app.use(express.json());
-app.use('/api/auth', loginRoute)
+app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/newsletter', newsletterRoute)
 
@@ -55,8 +57,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = 8800;
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   connection();
-  console.log('server running on port ' + PORT)
+  console.log(`server running on port ${process.env.PORT}` )
 })

@@ -60,7 +60,7 @@ export const sendMail = (req, res) => {
 
   const mailOptions = {
     from: email,
-    to: "jhgangs.entertainment@gmail.com",
+    to: "info@5starestateliquidators.com",
     subject: "New form submission",
     text: `Name: ${
       fName + " " + lName
@@ -70,8 +70,8 @@ export const sendMail = (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "alifahmeddeveloper@gmail.com",
-      pass: "fumdyxrickfuacvq",
+      user: process.env.AUTH_EMAIL,
+      pass: process.env.AUTH_PASSWORD,
     },
   });
 
