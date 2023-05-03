@@ -1,6 +1,6 @@
 .adminContact{
     flex-grow: 1;
-    padding: 3rem 5rem;
+    padding: 1rem 5rem;
 }
 .adminContactHeading{
     display: flex;
@@ -54,3 +54,32 @@ table tr:nth-child(even){
     gap: 1rem;
     box-sizing: border-box;
 }
+
+
+/* =======================responsive=========================== */
+@media only screen and (max-width: 1300px) {
+    .adminContactBody > table > tr > th:nth-child(4){
+        display: none;
+    }
+    .adminContactBody > table > tr > td:nth-child(4){
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .adminContactBody > table > tr > th:nth-child(5){
+        display: none;
+    }
+    .adminContactBody > table > tr > td:nth-child(5){
+        display: none;
+    }
+    
+    .adminContactBody > table > tr > th, td {
+        font-size: 0.8rem;
+    }
+    .iconsList > .icon {
+        width: 0.9rem;
+    }
+
+    
+  }

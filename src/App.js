@@ -41,7 +41,7 @@ function Layout() {
 function AdminLayout() {
   return (
     <>
-      <AdminTop />
+      {/* <AdminTop /> */}
       <div className="dashboardBody">
         <Sidebar />
         <Outlet />

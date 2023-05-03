@@ -1,10 +1,27 @@
+.sidebardWrapper{
+    position: relative;
+}
+.sidebardWrapper > span{
+    position: absolute;
+    color: #000;
+    left: 1rem;
+    top: 0.6rem;
+    padding: 0.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.sidebardWrapper > span:hover{
+    background-color: #e7e7e7;
+}
+
 .dashboardSidebar{
     background-color: #292a30;
     height: 100vh;
-    flex-grow: ;
+    /* flex-grow: 1; */
     min-width: 20rem;
     color: white;
     font-weight: 300;
+    position: relative;
 }
 .dashboardSidebar > h3{
     font-weight: 400;
@@ -34,3 +51,24 @@
     font-size: 1.1rem;
     
 }
+.dashboardSidebar > span{
+    position: absolute;
+    right: 1rem;
+    top: 0.6rem;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.dashboardSidebar > span:hover{
+    background-color: #3f3f3f;
+}
+
+/* ================= responsive ===================== */
+
+@media only screen and (max-width: 1570px) {
+   .dashboardSidebar{
+    display: none;
+   }
+  }
