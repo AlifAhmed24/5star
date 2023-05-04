@@ -22,9 +22,7 @@ function Login() {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
-        user);
+      const res = await axios.post("http://5starestateliquidations.com/api/auth/login", user);
         
       await setLoggedIn({
         user: 'Admin',

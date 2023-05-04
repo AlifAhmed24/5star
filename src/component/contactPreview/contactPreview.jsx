@@ -11,7 +11,7 @@ function ContactPreview() {
     const fetchContactPreview = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8800/api/contact/get/one/${id}`
+          `http://5starestateliquidations.com/api/contact/get/one/${id}`
         );
         setContactPreview(res.data);
       } catch (error) {

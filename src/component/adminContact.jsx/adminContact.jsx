@@ -9,7 +9,7 @@ function AdminContact() {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const res = await axios.get('http://localhost:8800/api/contact/get/all')
+        const res = await axios.get('http://5starestateliquidations.com/api/contact/get/all')
         setContactInfo(res.data)
       } catch (error) {
         console.log(error)
@@ -42,7 +42,7 @@ function AdminContact() {
           </tr>
           
           {
-            contactInfo.map((value, index) => {
+            contactInfo?.map((value, index) => {
               return (
                 <Row
                   key={index}

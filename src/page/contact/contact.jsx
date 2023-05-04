@@ -28,7 +28,7 @@ function Contact() {
       
         setLoading(true);
         const res = await axios.post(
-          "http://localhost:8800/api/contact/",
+          "/api/contact/",
           formData
         );
 

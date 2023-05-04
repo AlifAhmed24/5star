@@ -9,9 +9,10 @@ function Newsletter() {
   useEffect(() => {
     const fetchNewsletter = async () => {
       const res = await axios.get(
-        "http://localhost:8800/api/newsletter/get/all"
+        "http://5starestateliquidations.com/api/newsletter/get/all"
       );
       setNewsletter(res.data);
+      console.log(res.data)
     };
     fetchNewsletter();
   }, []);

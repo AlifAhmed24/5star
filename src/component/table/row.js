@@ -19,7 +19,7 @@ function Row({
   function handleDelete() {
     const deleteContact = async () => {
       const res = await axios.delete(
-        `http://localhost:8800/api/contact/delete/one/${id}`
+        `http://5starestateliquidations.com/api/contact/delete/one/${id}`
       );
       handleContactDelete(id);
     };
