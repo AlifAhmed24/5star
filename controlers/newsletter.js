@@ -24,6 +24,6 @@ export const deleteNewsletter = async (req, res, next) => {
 
 //GET ALL NEWSLETTER
 export const getNewsletter = async (req, res, next) => {
-  const getNewsletter = await Newsletter.find().sort({_id: - 1});
-  res.status(200).json(getNewsletter)
+  const getNewsletters = await Newsletter.find().sort({_id: - 1});
+  res.status(200).json(getNewsletters)
 }

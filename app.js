@@ -20,10 +20,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'build'))); 
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
-
 //mongoose connection
 const connection = async () => {
     try{
@@ -34,13 +30,14 @@ const connection = async () => {
     }
 }
 
-    mongoose.connection.on("disconnected", () => {
-    console.log("mongoDB disconnected!");
-  })
-
+mongoose.connection.on("disconnected", () => {
+  console.log("mongoDB disconnected!");
+})
 
 //middleware
 app.use(express.json());
+app.use(cors());
+
 app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/newsletter', newsletterRoute)
@@ -57,7 +54,15 @@ app.use((err, req, res, next) => {
   });
 });
 
+// Serve index.html for any other requests
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
+
 app.listen(process.env.PORT, () => {
   connection();
   console.log(`server running on port ${process.env.PORT}` )
 })
+
+
