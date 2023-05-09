@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import nodemailer from "nodemailer";
 import Contact from '../models/contact.js'
+import { createError } from '../utils/createError.js';
 
 export const createContact = async (req, res, next) => {
     const {
@@ -35,7 +36,7 @@ export const createContact = async (req, res, next) => {
         res.status(201).json("sucessfully saved contact")
         next()
       } catch (error) {
-        console.log(error)
+        next(createError(401, error))
       }
 }
 

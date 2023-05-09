@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'build'))); 
@@ -36,7 +36,7 @@ mongoose.connection.on("disconnected", () => {
 
 //middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"http://localhost:3000", credentials: true}));
 
 app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
