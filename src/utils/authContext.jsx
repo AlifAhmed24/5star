@@ -5,5 +5,4 @@ export const userContext = createContext({
     authenticated: false
 })
 
-console.log('from create context ' + userContext.authenticated)
 

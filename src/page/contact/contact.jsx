@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-
 import "./contact.css";
+import newRequest from "../../utils/newRequest";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -20,17 +20,13 @@ function Contact() {
     checkboxTwo: "Unchecked rules Two",
   });
   const [loading, setLoading] = useState(false);
-  const [notVerified, setNotVerified] = useState("");
 
   async function handleSubmit(event) {
     try {
       event.preventDefault();
       
         setLoading(true);
-        const res = await axios.post(
-          "/api/contact/",
-          formData
-        );
+        const res = await newRequest.post('/api/contact/', formData)
 
         setFormData({
           fName: "",

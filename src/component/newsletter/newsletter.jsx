@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./newsletter.css";
-import axios from "axios";
+import newRequest from './../../utils/newRequest';
 
 function Newsletter() {
   const [newsletter, setNewsletter] = useState([]);
@@ -8,11 +8,8 @@ function Newsletter() {
 
   useEffect(() => {
     const fetchNewsletter = async () => {
-      const res = await axios.get(
-        "http://5starestateliquidations.com/api/newsletter/get/all"
-      );
+      const res = await newRequest.get("/api/newsletter/get/all")
       setNewsletter(res.data);
-      console.log(res.data)
     };
     fetchNewsletter();
   }, []);

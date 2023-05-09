@@ -11,7 +11,6 @@ function Login() {
   });
   const [error, setError] = useState("");
   const [isLoggedIn, setLoggedIn] = useContext(userContext);
-  console.log('from login ' + isLoggedIn.authenticated )
   const navigate = useNavigate()
 
   function handleChange(event) {
@@ -22,7 +21,7 @@ function Login() {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const res = await axios.post("http://5starestateliquidations.com/api/auth/login", user);
+      const res = await axios.post("http://localhost:8800/api/auth/login", user, {withCredentials: true});
         
       await setLoggedIn({
         user: 'Admin',
@@ -32,7 +31,6 @@ function Login() {
       navigate('/admin', { replace: true });
     } catch (error) {
       setError(error.response?.data.message);
-      console.log(error);
     }
   }
 

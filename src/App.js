@@ -56,7 +56,6 @@ function App() {
     user: null,
     authenticated: false,
   });
-  console.log("from app js" + isLoggedIn.authenticated);
 
   return (
     <userContext.Provider value={[isLoggedIn, setLoggedIn]}>
