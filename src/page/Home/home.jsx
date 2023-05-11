@@ -109,7 +109,7 @@ function About() {
         <div className="container">
           <div className="newsletter">
             <div className="newsletterWrapper">
-              <h3>Subscribe To Our Newsletter</h3>
+              <h3>Get Notified About Upcoming Estate Sales</h3>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
