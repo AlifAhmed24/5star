@@ -37,7 +37,7 @@ mongoose.connection.on("disconnected", () => {
 
 //middleware
 app.use(express.json());
-app.use(cors({origin:"http://localhost:3000", credentials: true}));
+app.use(cors({origin:"https://5starestateliquidations.com", credentials: true}));
 
 // Lets encrypt verification route
 app.get("/.well-known/acme-challenge/:token", (req, res) => {
@@ -62,7 +62,7 @@ app.use((err, req, res, next) => {
     status: errorStatus,
     message: errorMessage,
     stack: err.stack,
-  });+
+  });
 });
 
 // Serve index.html for any other requests

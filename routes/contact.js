@@ -2,9 +2,8 @@ import express from 'express'
 const router = express.Router();
 import {createContact, sendMail, getContactAll, getContactOne, deleteContactone} from '../controlers/contact.js'
 
-//CREATE CONTACT
-router.post('/', createContact)
-//SEND MAIL
+//CREATE CONTACT & SEND MAIL
+router.post('/', createContact, sendMail)
 //GET CONTACT All
 router.get('/get/all', getContactAll)
 //GET CONTACT ONE
