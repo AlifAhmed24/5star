@@ -19,6 +19,8 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'build'))); 
+app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
+
 
 //mongoose connection
 const connection = async () => {
@@ -37,6 +39,13 @@ mongoose.connection.on("disconnected", () => {
 //middleware
 app.use(express.json());
 app.use(cors({origin:"http://localhost:3000", credentials: true}));
+
+// Lets encrypt verification route
+app.get("/.well-known/acme-challenge/:token", (req, res) => {
+  res.sendFile(path.join(__dirname, '.well-known/acme-challenge', req.params.token))
+});
+
+
 
 app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
