@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import "./login.css";
 import { userContext } from "../../utils/authContext";
 import {useNavigate, Navigate} from 'react-router-dom';
+import newRequest from './../../utils/newRequest';
 
 function Login() {
   const [user, setUser] = useState({
@@ -21,10 +21,9 @@ function Login() {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const res = await axios.post("http://localhost:8800/api/auth/login", user, {withCredentials: true});
-        
+      const res = await newRequest.post("/api/auth/login", user, {withCredentials: true});
       await setLoggedIn({
-        user: 'Admin',
+        user: res.data.username,
         authenticated: true,
       });
 

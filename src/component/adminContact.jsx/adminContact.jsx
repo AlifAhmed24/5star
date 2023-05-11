@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./adminContact.css";
-import "boxicons";
-import axios from "axios";
 import Row from "../table/row";
 import newRequest from "../../utils/newRequest";
 

@@ -17,18 +17,18 @@
 .aboutWrapper {
     display: flex;
     gap: 3rem;
+    align-items: center;
 }
 .aboutImg{
-    height: 23rem;
     border-radius: 1rem;
     overflow: hidden;
-    aspect-ratio: 3/1;
-    object-fit: cover;
-    
+    aspect-ratio: 2/3.5;
+    object-fit:cover;
 }
 .aboutImg > img{
     width: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 }
 .aboutWrapper > .aboutinfo >  h1{
     font-weight: 500;
@@ -41,7 +41,26 @@
 }
 
 @media only screen and (max-width: 1300px) {
-    .aboutWrapper > p{
+    .aboutWrapper > .aboutinfo > p{
+        color: #575757;
+        line-height: 2.2rem;
         width: 100%;
     }
+}
+@media only screen and (max-width: 1125px) {
+    .aboutWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .aboutImg{
+        height: 8rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        aspect-ratio: 2/3.5;
+        object-fit:cover;
+    }
+
 }
