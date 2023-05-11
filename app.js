@@ -16,7 +16,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(bodyParser.json());
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'build'))); 
 app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
@@ -51,6 +50,9 @@ app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/newsletter', newsletterRoute)
 
+//SERVING ACME-CHALLENGE FILE
+app.use('/.well-known/acme-challenge', express.static('.well-known/acme-challenge'));
+
 //ERROR HANDLER
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
@@ -60,14 +62,13 @@ app.use((err, req, res, next) => {
     status: errorStatus,
     message: errorMessage,
     stack: err.stack,
-  });
+  });+
 });
 
 // Serve index.html for any other requests
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-
 
 app.listen(process.env.PORT, () => {
   connection();
