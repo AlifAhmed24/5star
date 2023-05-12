@@ -5,7 +5,7 @@ const router = express.Router();
 //CREATE NEWSLETTER
 router.post('/', createNewsletter)
 //GET NEWSLETTER
-router.get('/get/all', getNewsletter)
+router.post('/get/all', getNewsletter)
 //DELETE NEWSLETTER
 router.delete('/delete/:id', deleteNewsletter) 
 
