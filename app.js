@@ -8,6 +8,7 @@ import authRoute from './routes/auth.js'
 import contactRoute from './routes/contact.js'
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import {clearCache} from 'clear-cache';
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,14 +36,17 @@ mongoose.connection.on("disconnected", () => {
 
 //middleware
 app.use(express.json());
-app.use(cors({origin:"http://localhost:3000", credentials: true}));
 
 app.use('/api/auth', authRoute)
 app.use('/api/contact', contactRoute)
 app.use('/api/newsletter', newsletterRoute)
 
-//SERVING ACME-CHALLENGE FILE
-app.use('/.well-known/acme-challenge', express.static('.well-known/acme-challenge'));
+app.get('/api/clear', (req, res) => {
+  // Your API code here
+  clearCache();
+  res.send('Cache cleared!');
+});
+
 
 //ERROR HANDLER
 app.use((err, req, res, next) => {
@@ -53,7 +57,7 @@ app.use((err, req, res, next) => {
     status: errorStatus,
     message: errorMessage,
     stack: err.stack,
-  });+
+  });
 });
 
 // Serve index.html for any other requests
