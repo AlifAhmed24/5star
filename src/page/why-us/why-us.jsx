@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './why-us.css'
 import Tagline from './../../component/tagline/tagline';
 import WhyUsCart from '../../component/whyUsCart/whyUsCart';
 
 function WhyUs() {
+  useEffect(() => {
+    document.title = 'Why Us - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="whyUs taglinePadding">
       <Tagline />

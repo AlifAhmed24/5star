@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./home.css";
 import aboutOne from "../../Assets/home/about1.png";
 import aboutTwo from "../../Assets/home/about2.png";
@@ -10,6 +10,11 @@ function About() {
     name:"",
     email:""
   });
+
+  useEffect(() => {
+    document.title = 'Home - Five Star Estate Liquidations ';
+  }, [])
+
   
   function handleChange(ev){
     const {value, name} = ev.target

@@ -40,8 +40,11 @@ function Contact() {
     } catch (error) {
       console.log(error)
     }
-    
   }
+
+  useEffect(() => {
+    document.title = 'Contact - Five Star Estate Liquidations ';
+  }, [])
 
   useEffect(() => {
     const button = document.querySelector(".btn");
@@ -55,6 +58,8 @@ function Contact() {
       button.style.cursor = "pointer";
     }
   }, [loading]);
+
+  
 
   function handleChange(event) {
     const { value, name } = event.target;

@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./faq.css";
 import { faq } from "./faq-data.js";
 
 function Faq() {
+
+  useEffect(() => {
+    document.title = 'FAQ - Five Star Estate Liquidations ';
+  }, [])
 
   function handleClick(index){
     const faqWrappers = document.querySelectorAll('.faqWrapper .faqContent');

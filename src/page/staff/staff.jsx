@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './staff.css'
 import Tagline from '../../component/tagline/tagline'
 import StaffCart from '../../component/staff-cart/staff-cart'
 import OwnerCart from '../../component/ownerCart/ownerCart'
 
 function Staff() {
+  useEffect(() => {
+    document.title = 'Staff - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="staff taglinePadding">
       <Tagline />

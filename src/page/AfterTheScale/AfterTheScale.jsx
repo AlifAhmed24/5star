@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './AfterTheScale.css'
 import Tagline from '../../component/tagline/tagline'
 import AfterScaleCart from '../../component/afterScale/afterScale'
 
 function AfterTheScale() {
+  useEffect(() => {
+    document.title = 'Sale - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="afterScale taglinePadding">
       <Tagline />

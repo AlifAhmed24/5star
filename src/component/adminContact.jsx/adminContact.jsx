@@ -8,7 +8,7 @@ function AdminContact() {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const res = await newRequest.get("/api/contact/get/all");
+        const res = await newRequest.post("/api/contact/get/all");
         setContactInfo(res.data);
       } catch (error) {
         console.log(error);

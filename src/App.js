@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
-  RouterProvider,
   Route,
   Routes,
   Outlet,
 } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 import Home from "./page/Home/home.jsx";
 import Mission from "./page/mission/mission";
 import Footer from "./section/footer/footer";
@@ -52,6 +52,7 @@ function AdminLayout() {
 
 
 function App() {
+  
   const [isLoggedIn, setLoggedIn] = useState({
     user: null,
     authenticated: false,
@@ -71,7 +72,7 @@ function App() {
             <Route path="/staff" element={<Staff />} />
             <Route path="/rates" element={<Rates />} />
             <Route path="/whyus" element={<WhyUs />} />
-            <Route path="/afterthescale" element={<AfterTheScale />} />
+            <Route path="/afterthesale" element={<AfterTheScale />} />
             <Route path="/faq" element={<Faq />} />
           </Route>
           <Route path="/login" element={<Login />} />

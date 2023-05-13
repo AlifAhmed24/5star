@@ -1,10 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./login.css";
 import { userContext } from "../../utils/authContext";
-import {useNavigate, Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import newRequest from './../../utils/newRequest';
 
 function Login() {
+  useEffect(() => {
+    document.title = 'Login - Five Star Estate Liquidations ';
+  }, [])
+
   const [user, setUser] = useState({
     username: "",
     password: "",

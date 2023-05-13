@@ -10,7 +10,7 @@ function ContactPreview() {
   useEffect(() => {
     const fetchContactPreview = async () => {
       try {
-        const res = await newRequest.get(
+        const res = await newRequest.post(
           `/api/contact/get/one/${id}`
         );
         setContactPreview(res.data);

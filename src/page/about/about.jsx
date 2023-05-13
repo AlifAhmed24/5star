@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './about.css'
 import Tagline from '../../component/tagline/tagline'
 import RonImg from '../../Assets/owner/Ron.jpg'
 
 function About() {
+
+  useEffect(() => {
+    document.title = 'About - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="about taglinePadding">
       <Tagline />

@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Tagline from "../../component/tagline/tagline";
 import "./services.css";
-import Bg from "../../component/bg";
 import ServicesCart from "../../component/servicesCart/services-cart.jsx";
 
 function Services() {
+  useEffect(() => {
+    document.title = 'Services - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="services taglinePadding">
       <Tagline />
