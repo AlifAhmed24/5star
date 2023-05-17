@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./adminContact.css";
-import "boxicons";
-import axios from "axios";
 import Row from "../table/row";
 import newRequest from "../../utils/newRequest";
 
@@ -10,7 +8,7 @@ function AdminContact() {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const res = await newRequest.get("/api/contact/get/all");
+        const res = await newRequest.post("/api/contact/get/all");
         setContactInfo(res.data);
       } catch (error) {
         console.log(error);

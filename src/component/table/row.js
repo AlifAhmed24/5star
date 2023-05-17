@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import 'boxicons'
+import newRequest from './../../utils/newRequest';
 
 function Row({
   sn,
@@ -18,10 +19,12 @@ function Row({
 
   function handleDelete() {
     const deleteContact = async () => {
-      const res = await axios.delete(
-        `http://5starestateliquidations.com/api/contact/delete/one/${id}`
-      );
-      handleContactDelete(id);
+      try {
+        await newRequest.delete(`/api/contact/delete/one/${id}`);
+        handleContactDelete(id);
+      } catch (error) {
+        console.log(error)
+      }
     };
     deleteContact();
   }

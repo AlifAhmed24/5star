@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./rates.css";
 import Tagline from "./../../component/tagline/tagline";
 import ratesImg from '../../Assets/rates/rates.jpg'
 
 function Rates() {
+  useEffect(() => {
+    document.title = 'Rates - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="rates taglinePadding">
       <Tagline />

@@ -4,7 +4,10 @@ import Tagline from "../../component/tagline/tagline";
 import Cart from "../../component/cart/cart";
 
 function Mission() {
-  
+  useEffect(() => {
+    document.title = 'Mission - Five Star Estate Liquidations ';
+  }, [])
+
   return (
     <div className="mission taglinePadding">
       <Tagline />

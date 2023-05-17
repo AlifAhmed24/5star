@@ -1,10 +1,14 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
+import React, { useState, useContext, useEffect } from "react";
 import "./login.css";
 import { userContext } from "../../utils/authContext";
-import {useNavigate, Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import newRequest from './../../utils/newRequest';
 
 function Login() {
+  useEffect(() => {
+    document.title = 'Login - Five Star Estate Liquidations ';
+  }, [])
+
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -21,10 +25,9 @@ function Login() {
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      const res = await axios.post("http://localhost:8800/api/auth/login", user, {withCredentials: true});
-        
+      const res = await newRequest.post("/api/auth/login", user, {withCredentials: true});
       await setLoggedIn({
-        user: 'Admin',
+        user: res.data.username,
         authenticated: true,
       });
 

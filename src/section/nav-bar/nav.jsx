@@ -66,7 +66,7 @@ function Nav() {
             <NavLink to="/whyus" activeClassName="active-link">
               Why Us
             </NavLink>
-            <NavLink to="/afterthescale" activeClassName="active-link">
+            <NavLink to="/afterthesale" activeClassName="active-link">
               After the Sale
             </NavLink>
             <NavLink to="/contact" activeClassName="active-link">

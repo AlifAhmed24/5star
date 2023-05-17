@@ -1,15 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./home.css";
 import aboutOne from "../../Assets/home/about1.png";
 import aboutTwo from "../../Assets/home/about2.png";
 import HomeSlider from '../../section/home-slider/home.jsx'
-import axios from "axios";
+import newRequest from './../../utils/newRequest';
 
 function About() {
   const [newsletterInfo, setNewsletterInfo] = useState({
     name:"",
     email:""
   });
+
+  useEffect(() => {
+    document.title = 'Home - Five Star Estate Liquidations ';
+  }, [])
+
   
   function handleChange(ev){
     const {value, name} = ev.target
@@ -21,15 +26,14 @@ function About() {
   async function handleSubmit(ev){
       ev.preventDefault();
       try{
-        const res = await axios.post('http://localhost:8800/api/newsletter', newsletterInfo)
+        newRequest.post('/api/newsletter', newsletterInfo)
         setNewsletterInfo({
           name: "",
           email: "",
         });
-      }catch(err){}
-
-      
-
+      }catch(error){
+        console.log(error)
+      }
   }
 
   return (

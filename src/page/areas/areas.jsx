@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './areas.css'
 import Tagline from '../../component/tagline/tagline'
 import aresMap from '../../Assets/areas/areas.png'
@@ -6,6 +6,10 @@ import aresMap from '../../Assets/areas/areas.png'
 function Areas() {
   const country = ["Anderson", "Bledsoe", "Blount", "Bradley", "Campbell", "Cannon", "Clay", "Coffee", "Cumberland", "Dekalb", "Fentress", "Franklin", "Grundy", "Hamilton", "Jackson", "Knox", "Loudon", "Marion", "McMinn", "Meigs", "Monroe", "Morgan", "Overton", "Pickett", "Polk", "Putnam", "Roane", "Rhea", "Scott", "Sequatchie", "Sevier", "Smith", "Van Buren", "Warren",
     "White"]
+    useEffect(() => {
+      document.title = 'Areas - Five Star Estate Liquidations ';
+    }, [])
+
   return (
     <div className="areas taglinePadding">
       <Tagline />

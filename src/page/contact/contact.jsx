@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import "./contact.css";
 import newRequest from "../../utils/newRequest";
 
@@ -24,10 +21,8 @@ function Contact() {
   async function handleSubmit(event) {
     try {
       event.preventDefault();
-      
         setLoading(true);
-        const res = await newRequest.post('/api/contact/', formData)
-
+        await newRequest.post('/api/contact/', formData)
         setFormData({
           fName: "",
           lName: "",
@@ -41,12 +36,15 @@ function Contact() {
           checkboxOne: "Unchecked rules One",
           checkboxTwo: "Unchecked rules Two",
         });
-      
-
-      setLoading(false);
-    } catch (error) {}
-    setLoading(false);
+        setLoading(false);
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+  useEffect(() => {
+    document.title = 'Contact - Five Star Estate Liquidations ';
+  }, [])
 
   useEffect(() => {
     const button = document.querySelector(".btn");
@@ -60,6 +58,8 @@ function Contact() {
       button.style.cursor = "pointer";
     }
   }, [loading]);
+
+  
 
   function handleChange(event) {
     const { value, name } = event.target;
@@ -179,10 +179,6 @@ function Contact() {
                 </p>
               </div>
             </div>
-            {/* <ReCAPTCHA
-              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-              onChange={(value) => setVerified(true)}
-            /> */}
 
             <button className="btn">Submit</button>
           </form>
@@ -202,8 +198,8 @@ function Contact() {
                 </div>
                 <div>
                   <span class="material-symbols-outlined">public</span>
-                  <a href="http://www.5startLiquidators.com" target="_blank">
-                    www.5startLiquidators.com
+                  <a href="http://www.5starestateliquidations.com" target="_blank">
+                    www.5starestateliquidations.com
                   </a>
                 </div>
               </div>
