@@ -4,7 +4,6 @@ import newRequest from './../../utils/newRequest';
 
 function Newsletter() {
   const [newsletter, setNewsletter] = useState([]);
-  console.log(newsletter);
 
   useEffect(() => {
     const fetchNewsletter = async () => {
