@@ -8,6 +8,7 @@ import authRoute from './routes/auth.js'
 import contactRoute from './routes/contact.js'
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser'
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -37,7 +38,8 @@ mongoose.connection.on("disconnected", () => {
 
 //middleware
 app.use(express.json());
-app.use(cors({origin:"https://5starestateliquidations.com", credentials: true}));
+app.use(cookieParser());
+app.use(cors({origin:"http://localhost:3000", credentials: true}));
 
 // Lets encrypt verification route
 app.get("/.well-known/acme-challenge/:token", (req, res) => {

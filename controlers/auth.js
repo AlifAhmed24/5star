@@ -39,7 +39,7 @@ export const login = async (req, res, next) => {
     if(!isPasswordCorrect) return next(createError(401, "Password is not correct"))
 
     
-    const token = jwt.sign({ id:user._id, isAdmin: user.isAdmin }, '3df569774e63501ac844e87c9c77eb9048e2dff1346e0a3bc2bea38e50892bc3');
+    const token = jwt.sign({ id:user._id, isAdmin: user.isAdmin }, proccess.env.JWT_SEC);
     const {password, isAdmin, ...rest} = user._doc
     res.cookie("access_token", token, {
         httpOnly: true,

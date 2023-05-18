@@ -1,6 +1,7 @@
 import Newsletter from '../models/newsletter.js'
 import {createError} from '../utils/createError.js'
 
+// CREATE NEWSLETTER
 export const createNewsletter = async (req, res, next) => {
   try {
     const {name, email} = req.body
@@ -24,6 +25,11 @@ export const deleteNewsletter = async (req, res, next) => {
 
 //GET ALL NEWSLETTER
 export const getNewsletter = async (req, res, next) => {
-  const getNewsletters = await Newsletter.find().sort({_id: - 1});
-  res.status(200).json(getNewsletters)
+  try {
+    const newsletters = await Newsletter.find().sort({_id: - 1});
+    res.status(200).json(newsletters)
+  } catch (error) {
+    next(createError(401, 'something went wrong to get newsletters'))
+  }
+
 }

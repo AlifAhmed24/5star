@@ -1,5 +1,3 @@
-import mongoose from 'mongoose'
-import nodemailer from "nodemailer";
 import Contact from '../models/contact.js'
 import { createError } from '../utils/createError.js';
 
