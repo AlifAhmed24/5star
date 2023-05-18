@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const newRequest = axios.create({
-    baseURL:"https://5starestateliquidations.com",
+    baseURL:"http://localhost:8800",
     withCredentials: true
 })
 

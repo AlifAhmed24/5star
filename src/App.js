@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -6,7 +6,6 @@ import {
   Routes,
   Outlet,
 } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
 import Home from "./page/Home/home.jsx";
 import Mission from "./page/mission/mission";
 import Footer from "./section/footer/footer";
@@ -21,7 +20,6 @@ import Contact from "./page/contact/contact";
 import About from "./page/about/about";
 import Faq from "./page/faq/faq.jsx";
 import Login from "./page/login/login.jsx";
-import AdminTop from "./component/adminTop/adminTop";
 import Sidebar from "./component/adminSidebar/sidebar";
 import AdminContact from "./component/adminContact.jsx/adminContact";
 import ContactPreview from "./component/contactPreview/contactPreview";
