@@ -61,7 +61,7 @@ export const sendMail = async (req, res, next) => {
 
     const mailOptions = {
       from: email,
-      to: "jhgangs.entertainment@gmail.com",
+      to: "ronlfields@gmail.com",
       subject: "New form submission",
       text: `Name: ${
         fName + " " + lName
