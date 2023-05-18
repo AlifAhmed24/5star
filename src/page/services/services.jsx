@@ -53,7 +53,7 @@ function Services() {
             <ServicesCart
               icon="home"
               title="Local Auction Houses  "
-              desc="STo maximize the sale price of some unique items, a local auction house may be the best option.  We work with several local auctions, and we know which house would likely produce the highest selling price.  We handle everything including negotiating lower fees, packing and transporting the item to the auction.
+              desc="To maximize the sale price of some unique items, a local auction house may be the best option.  We work with several local auctions, and we know which house would likely produce the highest selling price.  We handle everything including negotiating lower fees, packing and transporting the item to the auction.
 "
             />
             <ServicesCart
