@@ -1,5 +1,6 @@
 import Contact from '../models/contact.js'
 import { createError } from '../utils/createError.js';
+import nodemailer from 'nodemailer';
 
 export const createContact = async (req, res, next) => {
     const {
@@ -38,52 +39,56 @@ export const createContact = async (req, res, next) => {
       }
 }
 
-export const sendMail = (req, res) => {
-  const {
-    fName,
-    lName,
-    email,
-    phone,
-    address,
-    city,
-    state,
-    zip,
-    checkboxOne,
-    checkboxTwo,
-    message,
-  } = req.body;
+export const sendMail = async (req, res, next) => {
+  try {
+    const {
+      fName,
+      lName,
+      email,
+      phone,
+      address,
+      city,
+      state,
+      zip,
+      checkboxOne,
+      checkboxTwo,
+      message,
+    } = req.body;
 
-  if (!fName || !email || !city) {
-    return res.status(400).send("Missing required fields");
-  }
-
-  const mailOptions = {
-    from: email,
-    to: "info@5starestateliquidators.com",
-    subject: "New form submission",
-    text: `Name: ${
-      fName + " " + lName
-    }\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nCity: ${city}\nState ${state}\nZip Code: ${zip}\nTerms1: ${checkboxOne}\nTerms2: ${checkboxTwo}\nMessage: ${message}`,
-  };
-  
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.AUTH_EMAIL,
-      pass: process.env.AUTH_PASSWORD,
-    },
-  });
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      return res.status(500).send("Error sending email");
-    } else {
-      console.log(info.response);
-      return res.status(200).send("Email sent successfully");
+    if (!fName || !email || !city) {
+      return res.status(400).send("Missing required fields");
     }
-  });
-}
+
+    const mailOptions = {
+      from: email,
+      to: "jhgangs.entertainment@gmail.com",
+      subject: "New form submission",
+      text: `Name: ${
+        fName + " " + lName
+      }\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}\nCity: ${city}\nState ${state}\nZip Code: ${zip}\nTerms1: ${checkboxOne}\nTerms2: ${checkboxTwo}\nMessage: ${message}`,
+    };
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.AUTH_EMAIL,
+        pass: process.env.AUTH_PASSWORD,
+      },
+    });
+
+    await transporter.sendMail(mailOptions);
+    req.name = fName + " " + lName;
+    req.email = email;
+    req.cat = 'reaching out to us';
+    next();
+    // res.status(200).send("Email sent successfully");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error sending email");
+  }
+};
+
+
 
 //GET ALL CONTACT
 export const getContactAll = async (req, res) => {

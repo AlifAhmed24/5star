@@ -8,6 +8,10 @@ export const createNewsletter = async (req, res, next) => {
     const newNewsletter = new Newsletter({name, email})
     const savedNewsletter = await newNewsletter.save();
     res.status(200).json('Newsletter created')
+    req.cat = 'subscribing to our newsletter.'
+    req.name = name
+    req.email = email
+    next()
   } catch (error) {
     next(createError(401, "something went wrong"))
   }

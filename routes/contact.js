@@ -2,9 +2,10 @@ import express from 'express';
 const router = express.Router();
 import {createContact, sendMail, getContactAll, getContactOne, deleteContactone} from '../controlers/contact.js';
 import {verifyToken} from "../utils/verifyToken.js"
+import { WelcomeEmail } from '../controlers/sendMailTemp.js';
 
 //CREATE CONTACT & SEND MAIL
-router.post('/', createContact, sendMail)
+router.post('/', createContact, sendMail, WelcomeEmail)
 //GET CONTACT All
 router.post('/get/all', verifyToken, getContactAll)
 //GET CONTACT ONE
