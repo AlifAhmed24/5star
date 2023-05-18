@@ -40,11 +40,11 @@ function Footer() {
               </div>
               <div>
                 <span class="material-symbols-outlined">mail</span>
-                <p>info@5startLiquidators.com</p>
+                <p>info@5starestateliquidations.com</p>
               </div>
               <div>
                 <span class="material-symbols-outlined">public</span>
-                <a href="http://www.5startLiquidators.com" target="_blank">www.5startLiquidators.com</a>
+                <a href="http://www.5starestateliquidations.com" target="_blank">www.5starestateliquidations.com</a>
               </div>
             </div>
           </div>
