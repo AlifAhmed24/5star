@@ -5,9 +5,9 @@ import {createContact, sendMail, getContactAll, getContactOne, deleteContactone}
 //CREATE CONTACT & SEND MAIL
 router.post('/', createContact, sendMail)
 //GET CONTACT All
-router.get('/get/all', getContactAll)
+router.post('/get/all', getContactAll)
 //GET CONTACT ONE
-router.get('/get/one/:id', getContactOne)
+router.post('/get/one/:id', getContactOne)
 //DELETE CONTACT ONE
 router.delete('/delete/one/:id', deleteContactone)
 
