@@ -1,5 +1,8 @@
 .sidebardWrapper{
-    position: relative;
+    position: sticky;
+    height: 100vh;
+    overflow: hidden;
+    
 }
 .sidebardWrapper > span{
     position: absolute;

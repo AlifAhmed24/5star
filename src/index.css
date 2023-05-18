@@ -20,6 +20,17 @@ body{
   /* background-color: red; */
   transition:  all .2s ease;
 }
+
+.dashboardBody{
+  display: flex;
+  gap: 3rem;
+  max-height: 100vh;
+}
+.dashboardBody:last-child{
+  padding-left: auto;
+}
+
+
 @media only screen and (max-width: 990px) {
   .container{
     padding: 0% 5%;
@@ -39,6 +50,3 @@ body{
   }
 }
 
-.dashboardBody{
-  display: flex;
-}
